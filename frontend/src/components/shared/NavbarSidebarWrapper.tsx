@@ -31,7 +31,7 @@ const NavbarSisdebarWrapper = ({ children }: { children: React.ReactNode }) => {
       <div className='flex'>
         <section
           className={`max-sm:hidden bg-blue-500 custom-scrollbar light-border absolute left-0 top-0 flex h-full flex-col  overflow-y-auto border-r   pt-[58px] ${
-            sidebar ? 'w-[266px] max-sm:w-[0px]' : 'w-[0px]'
+            sidebar ? 'w-[240px] max-sm:w-[0px]' : 'w-[0px]'
           }`}
         >
           <LeftSidebar />
@@ -40,7 +40,7 @@ const NavbarSisdebarWrapper = ({ children }: { children: React.ReactNode }) => {
           <div
             className={`${
               sidebar
-                ? 'max-sm:ml-[0px] max-sm:w-[100%] ml-[266px] w-[100%-266px]'
+                ? 'max-sm:ml-[0px] max-sm:w-[100%] ml-[240px] w-[100%-240px]'
                 : 'ml-[0px] w-[100%]'
             } `}
           >

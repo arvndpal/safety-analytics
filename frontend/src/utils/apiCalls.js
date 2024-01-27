@@ -1,22 +1,29 @@
 import axios from 'axios';
+import axiosInstance from './axiosInstance';
 const BASE_URL = 'http://localhost:8080/api';
 
 export const login = async ({ email, password }) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/login`, {
+    const response = await axiosInstance.post(`${BASE_URL}/auth/login`, {
       email,
       password,
     });
     console.log('login response', response);
     return response;
   } catch (error) {
-    console.log('login error1', error.response);
+    console.log('login error1', error);
   }
 };
 
 export const getData = async (url) => {
-  const response = await axios.get(`${BASE_URL}/${url}`);
-  return response;
+  try {
+    const response = await axiosInstance.get(`${BASE_URL}/${url}`);
+    return response;
+  } catch (error) {
+    if (error.message === 'Network Error')
+      window.location.href = '/network-error';
+    return { data: [] };
+  }
 };
 
 export const deleteData = async (url) => {

@@ -40,7 +40,7 @@ export default function MobileNavbar() {
         open={state.left}
         onClose={toggleDrawer('left', false)}
       >
-        <div className='w-[266px] bg-blue-500 h-full  '>
+        <div className='w-[240px] bg-blue-500 h-full  '>
           <div className='cursor-pointer flex shadow-lg bg-white py-4'>
             {/* <span onClick={handleSidbarToggle}>
             {' '}

@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:8080',
+  headers: {
+    'Content-type': 'application/json',
+  },
+  withCredentials: true,
 });
 
 const authService = {
@@ -29,10 +33,11 @@ const authService = {
 // Add a request interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
+    // console.log('config', config);
     return config;
   },
   (error) => {
@@ -43,11 +48,13 @@ axiosInstance.interceptors.request.use(
 // Add a response interceptor
 axiosInstance.interceptors.response.use(
   (response) => {
+    console.log('response1', response);
     return response;
   },
   async (error) => {
     const originalRequest = error.config;
 
+    console.log('originalRequest', originalRequest);
     // Handle token expiration and retry the request with a refreshed token
     if (
       error.response &&

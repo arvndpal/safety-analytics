@@ -60,11 +60,11 @@ const SalesPredictions = () => {
     series: [
       {
         name: 'Hyundai',
-        data: [110, 85, 45, 75, 72, 120],
+        data: [110, 85, 45, 75, 72, 90],
       },
       {
         name: 'BMW',
-        data: [80, 115, 76, 51, 50, 90],
+        data: [80, 115, 76, 100, 90, 130],
       },
       {
         name: 'Audi',

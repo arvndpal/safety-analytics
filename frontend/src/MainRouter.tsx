@@ -7,6 +7,7 @@ import NavbarSisdebarWrapper from './components/shared/NavbarSidebarWrapper';
 import UserManagement from './pages/user-management/UserManagement';
 import NotFound from './pages/404/NotFound';
 import CompetitiveAnalysis from './pages/competitive-analysis/CompetitiveAnalysis';
+import NetworkError from './pages/network-error/NetworkError';
 
 const MainRouter = () => {
   const appRouter = createBrowserRouter([
@@ -35,6 +36,14 @@ const MainRouter = () => {
       element: (
         <NavbarSisdebarWrapper>
           <CompetitiveAnalysis />
+        </NavbarSisdebarWrapper>
+      ),
+    },
+    {
+      path: '/network-error',
+      element: (
+        <NavbarSisdebarWrapper>
+          <NetworkError />
         </NavbarSisdebarWrapper>
       ),
     },

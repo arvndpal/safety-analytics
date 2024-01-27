@@ -18,7 +18,11 @@ initializePassport(passport);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
+app.use(cors(corsConfig));
 //Middleware
 app.use(
   session({
@@ -38,6 +42,23 @@ app.use(passport.session());
 //   next();
 // };
 // app.use(printData);
+// app.use(function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', req.headers.origin);
+//   res.header(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept'
+//   );
+//   next();
+// });
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', ['http://localhost:3003']);
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 //Routes
 app.use('/api/tutorials', tutorialsRoutes);
 app.use('/api/employees', employeesRoutes);

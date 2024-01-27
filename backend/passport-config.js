@@ -11,6 +11,7 @@ function initialize(passport) {
       return done(null, false, { message: result.message });
     }
     let authenticated_user = result;
+    // console.log('authenticated_user', authenticated_user);
     return done(null, authenticated_user);
   };
 

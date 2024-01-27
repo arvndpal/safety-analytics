@@ -24,8 +24,11 @@ const Login = () => {
     const response = await login(user);
     // @ts-ignore
     if (response.data.user) {
-      // @ts-ignore
-      localStorage.setItem('user', JSON.stringify(response.data));
+      localStorage.setItem('user', JSON.stringify(response?.data));
+      localStorage.setItem(
+        'access_token',
+        JSON.stringify(response?.data?.token)
+      );
       navigate('/dashboard');
     } else {
       //@ts-ignore
@@ -87,7 +90,7 @@ const Login = () => {
             <div className='mt-2  text-[14px] text-red-600  w-48 '>{error}</div>
           )}
           <div
-            className='mt-5 py-1 px-2  text-[14px]  font-bold text-center bg-yellow-400 w-full cursor-pointer '
+            className='mt-5 py-1 px-2  text-[14px]  font-bold text-center bg-yellow-400 hover:bg-yellow-500 w-full cursor-pointer '
             onClick={handleLogin}
           >
             Login

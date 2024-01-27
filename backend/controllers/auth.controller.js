@@ -69,7 +69,9 @@ exports.checklUserCreds = async (email, password) => {
     const matched = bcrypt.compareSync(password, employee.password);
 
     if (matched) {
-      const token = jwt.sign({ _id: id, email }, JWT_SECRET);
+      const token = jwt.sign({ _id: id, email }, JWT_SECRET, {
+        expiresIn: 60,
+      });
       return {
         token,
         email: email_address,

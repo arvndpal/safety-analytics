@@ -14,7 +14,7 @@ router.post('/', create);
 router.get('/:id', findOne);
 router.put('/:id', update);
 router.delete('/:id', deleteEmployee);
-// router.get('/', checkLoggedIn, findAll);
-router.get('/', findAll);
+router.get('/', checkLoggedIn, findAll);
+// router.get('/', findAll);
 
 module.exports = router;

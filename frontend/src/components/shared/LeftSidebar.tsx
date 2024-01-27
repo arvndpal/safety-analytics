@@ -98,7 +98,12 @@ const LeftSidebar = () => {
                 isChild={false}
                 noChild={false}
               />
-              <div style={{ display: sidebarStates?.[item.label] || 'none' }}>
+              <div
+                style={{
+                  display: sidebarStates?.[item.label] || 'none',
+                  transition: 'all 1sec',
+                }}
+              >
                 {item.children.map((child: any) => {
                   isActive = pathname === child.route;
                   return (
