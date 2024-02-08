@@ -3,6 +3,7 @@ import axiosInstance from './axiosInstance';
 const BASE_URL = 'http://localhost:8080/api';
 
 export const login = async ({ email, password }) => {
+  console.log('login', email, password);
   try {
     const response = await axiosInstance.post(`${BASE_URL}/auth/login`, {
       email,
