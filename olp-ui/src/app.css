@@ -1,0 +1,24 @@
+.login-container {
+  border-radius: 20px;
+}
+.login-section1 {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.login-section2 {
+  border-radius: 20px;
+}
+
+.input {
+  border: 1px solid #bfbfdc;
+  border-radius: 4px;
+}
+
+.Mui-selected {
+  color: white !important;
+  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
+}
