@@ -4,7 +4,7 @@ template.innerHTML = `
   .user-card {
 		font-family: 'Arial', sans-serif;
 		background: #f4f4f4;
-		width: 300px;
+		width: 400px;
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		grid-gap: 10px;
@@ -89,7 +89,8 @@ class UserCard extends HTMLElement {
     this.showInfo = true;
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
     this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
-
+    // this.ref = this.getAttribute('ref');
+    console.log('custion function', this.current);
     this.shadowRoot
       .querySelector('#toggle-info')
       .addEventListener('click', () => this.toggleInfo());

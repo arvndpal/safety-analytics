@@ -1,13 +1,18 @@
 const MetricCard = () => {
+  const red = '#ff0000';
+  const green = 'green';
   return (
-    <div className='shadow-lg w-9'>
-      <div>Change Request</div>
-      <div>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </div>
-    </div>
+    <metric-card
+      heading='Change Request'
+      value1='70'
+      text1='Total Cr'
+      value1Color={red}
+      value3Color={green}
+      value2='23.4'
+      text2='Total Approved'
+      value3='12'
+      text3='Open Cr'
+    ></metric-card>
   );
 };
 

@@ -9,6 +9,7 @@ import NotFound from './pages/404/NotFound';
 import CompetitiveAnalysis from './pages/competitive-analysis/CompetitiveAnalysis';
 import NetworkError from './pages/network-error/NetworkError';
 import UserCard from './pages/web-components/userCard';
+import CustomHook from './pages/custom-hooks';
 
 const MainRouter = () => {
   const appRouter = createBrowserRouter([
@@ -19,6 +20,10 @@ const MainRouter = () => {
     {
       path: '/user-cards',
       element: <UserCard />,
+    },
+    {
+      path: '/custom-hooks',
+      element: <CustomHook />,
     },
     {
       path: '/user-management',
