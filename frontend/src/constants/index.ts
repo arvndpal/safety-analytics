@@ -79,3 +79,77 @@ export const sidebarLinks: any = [
     children: null,
   },
 ];
+export const userTableHead = [
+  {
+    headerName: 'Name',
+    fieldName: 'name',
+  },
+  {
+    headerName: 'Email',
+    fieldName: 'email',
+  },
+  {
+    headerName: 'Phone',
+    fieldName: 'phone',
+  },
+  {
+    headerName: 'Address',
+    fieldName: 'address',
+  },
+];
+export const userDetails: any = [
+  {
+    name: 'Arvind Kumar Pal',
+    email: 'arvind@gmail.com',
+    phone: '9876543210',
+    address: 'Noida, India',
+  },
+  {
+    name: 'Ajali Singh',
+    email: 'anjali@gmail.com',
+    phone: '8876543210',
+    address: 'Bangalore, India',
+  },
+  {
+    name: 'Ajay Singh',
+    email: 'ajay@gmail.com',
+    phone: '8886543210',
+    address: 'hyderabad, India',
+  },
+  {
+    name: 'Nikita Jain',
+    email: 'nikita@gmail.com',
+    phone: '7777543210',
+    address: 'Noida, India',
+  },
+  {
+    name: 'Arvind Kumar Pal',
+    email: 'arvind2@gmail.com',
+    phone: '8876553210',
+    address: 'Bangalore, India',
+  },
+  {
+    name: 'Vijata Oberoi',
+    email: 'vijata@gmail.com',
+    phone: '9876543210',
+    address: 'Mumbai, India',
+  },
+  {
+    name: 'Vivek Varma',
+    email: 'vivek@gmail.com',
+    phone: '6876543210',
+    address: 'Mumbai, India',
+  },
+  {
+    name: 'Sonu singh',
+    email: 'sonu.singh@gmail.com',
+    phone: '9876543210',
+    address: 'Bangalore, India',
+  },
+  {
+    name: 'Sunny Kumar',
+    email: 'sunny@gmail.com',
+    phone: '9876543210',
+    address: 'Bangalore, India',
+  },
+];
