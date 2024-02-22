@@ -16,6 +16,15 @@ export const login = async ({ email, password }) => {
   }
 };
 
+export const postData = async (url, data) => {
+  try {
+    const response = await axiosInstance.post(`${BASE_URL}/${url}`, data);
+    return response;
+  } catch (error) {
+    console.log('Post API Error', error);
+  }
+};
+
 export const getData = async (url) => {
   try {
     const response = await axiosInstance.get(`${BASE_URL}/${url}`);

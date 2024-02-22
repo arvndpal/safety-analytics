@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { deleteData, getData, updateData } from '../../utils/apiCalls';
+import {
+  deleteData,
+  getData,
+  postData,
+  updateData,
+} from '../../utils/apiCalls';
 export const getUserData = createAsyncThunk('user/userList', async () => {
   try {
     const response = await getData('employees');
@@ -14,6 +19,17 @@ export const deleteUser = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       await deleteData('employees/' + id);
+      thunkAPI.dispatch(getUserData());
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+export const createUser = createAsyncThunk(
+  'user/create',
+  async (data, thunkAPI) => {
+    try {
+      await postData('employees', data);
       thunkAPI.dispatch(getUserData());
     } catch (error) {
       console.error(error);

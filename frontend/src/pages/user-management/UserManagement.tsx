@@ -8,9 +8,11 @@ import { getUserData } from '../../lib/features/userSlice';
 import CustomMenu from '../../components/shared/CustomMenu';
 import moment from 'moment';
 import { Box } from '@mui/material';
+import UserCreateForm from './UserCreateForm';
 
 const UserManagement = () => {
   const dispatch = useDispatch();
+  const [addNew, setAddNew] = useState(false);
   const userData = useSelector((state) => state.user.userData);
 
   const [rowData, setRowData] = useState([]);
@@ -37,19 +39,22 @@ const UserManagement = () => {
   };
 
   const handleDownloadAsClick = () => {};
+  const handleAddNew = (value) => {
+    setAddNew(value);
+  };
   return (
     <>
-      <div className='flex-between flex-col mt-2 sm:flex-row '>
+      <div className="flex-between flex-col mt-2 sm:flex-row ">
         <div>
-          <h1 className='my-2 font-bold'>User Management</h1>
+          <h1 className="my-2 font-bold">User Management</h1>
         </div>
-        <div className='mb-2 flex-between gap-2'>
+        <div className="mb-2 flex-between gap-2">
           <Box
             sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}
           >
             <div
-              className='text-[12px] bg-yellow-400 px-4 py-1.5 cursor-pointer  '
-              onClick={() => {}}
+              className="text-[12px] bg-yellow-400 font-semibold px-4 py-1.5 cursor-pointer  "
+              onClick={() => handleAddNew(true)}
             >
               ADD NEW
             </div>
@@ -61,8 +66,15 @@ const UserManagement = () => {
           />{' '}
         </div>
       </div>
-
-      <div className='ag-theme-quartz h-[450px] w-full custom-scrollbar'>
+      {addNew && (
+        <div className="shadow-lg bg-white mb-5 p-4 flex flex-col rounded-md">
+          <div className="font-semibold mb-2">Add New User</div>
+          <div className="">
+            <UserCreateForm handleAddNew={handleAddNew} />
+          </div>
+        </div>
+      )}
+      <div className="ag-theme-quartz h-[450px] w-full custom-scrollbar">
         <SimpleAgGridTable
           rowData={rowData}
           colDefs={colDefs}
